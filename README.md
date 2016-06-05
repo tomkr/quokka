@@ -30,7 +30,7 @@ Next your web application will need to redirect to a dialog url created by:
 
 Facebook will redirect to your redirect uri with a `code` parameter. Pass this to `access_token` to get the required token.
 
-    access_token = Quokka.access_token(redirect_uri, code)['access_token']
+    access_token = Quokka.access_token(redirect_uri, code)
 
 Now you can use the `access_token` you received to get user data from Facebook.
 

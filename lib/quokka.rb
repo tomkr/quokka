@@ -44,6 +44,18 @@ module Quokka
                                  redirect_uri: redirect_uri))
   end
 
+  # Gets the hash with access token data from Facebook, based on the
+  # redirect_uri used in the login dialog and the code that was returned from
+  # it and returns only the access token itself.
+  #
+  # @param redirect_uri URI which Facebook redirected to after login
+  # @param code The code provided by Facebook
+  #
+  # @return [String] The access token data from Facebook
+  def access_token(redirect_uri, code)
+    access_token_data(redirect_uri, code)["access_token"]
+  end
+
   def graph_url(path, query)
     uri = GRAPH_URI.join(path)
     uri.query_values = query
