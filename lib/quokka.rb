@@ -56,6 +56,16 @@ module Quokka
     access_token_data(redirect_uri, code)["access_token"]
   end
 
+  # Gets a hash of data for the user logged in with the access token. This
+  # allows you to get the details of the logged in user for further usage.
+  #
+  # @param access_token The token provided by Facebook
+  #
+  # @return [Hash] The data for the logged in user
+  def user_data(access_token)
+    read_json_from_url(graph_url("me", access_token: access_token))
+  end
+
   def graph_url(path, query)
     uri = GRAPH_URI.join(path)
     uri.query_values = query
