@@ -1,4 +1,4 @@
-# Quokka
+# Quokka [![Build Status](https://travis-ci.org/tomkr/quokka.svg?branch=master)](https://travis-ci.org/tomkr/quokka)
 
 Quokka provides tools to make logging in with Facebook from your server a breeze.
 
